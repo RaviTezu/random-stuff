@@ -5,3 +5,5 @@ http://cloudsmith.github.io/geppetto/ - An integrated toolset for developing pup
 http://www.youtube.com/watch?feature=player_embedded&v=RuUFnog29M4 - Puppet Conf - Logstash 
 
 http://docs.puppetlabs.com/references/latest/type.html - Puppet type Reference
+
+docs.puppetlabs.com/puppet_core_types_cheatsheet.pdf - Puppet core types cheatsheet
