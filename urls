@@ -11,3 +11,5 @@ docs.puppetlabs.com/puppet_core_types_cheatsheet.pdf - Puppet core types cheatsh
 http://www.craigdunn.org/2012/05/239/ - Article on Designing Puppet – Roles and Profiles
 
 https://communities.netapp.com/people/BrendonHiggins/blog/2012/12/29/learning-netapp--a-storage-admins-guide  - Learning Netapp
+
+http://www.masterzen.fr/2010/11/14/puppet-ssl-explained/ and http://blkperl.github.io/replace-puppet-ca.html - Puppet SSL Certs
