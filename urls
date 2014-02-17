@@ -9,3 +9,5 @@ http://docs.puppetlabs.com/references/latest/type.html - Puppet type Reference
 docs.puppetlabs.com/puppet_core_types_cheatsheet.pdf - Puppet core types cheatsheet
 
 http://www.craigdunn.org/2012/05/239/ - Article on Designing Puppet – Roles and Profiles
+
+https://github.com/getpelican/pelican-themes - Pelican - A static site generator
