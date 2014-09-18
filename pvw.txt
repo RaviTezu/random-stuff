@@ -1,0 +1,11 @@
+============================================
+Using pip, virtualenv and virtualenvwrapper:
+============================================
+
+PIP is a tool that fetches PYTHON Packages from Python Package Index and its mirrors - Something like yum for RHEL based systems. It is used to install and manage Python packages. If you're familiar with easy_install, PIP is somewhat similar to it; But with extra features.. i.e it support for virtualenv. 
+
+virtualenv is a tool for creating isolated Python environments for maintaining packge dependencies. It's great for situations where you're working on more than one project at a time, and where there are clashes between the version numbers of different libraries that your projects use. 
+
+virtualenvwrapper is a set of extensions to virtualenv tool. The extensions include wrappers for creating and deleting virtual environments and otherwise managing your development workflow, making it easier to work on more than one project at a time without introducing conflicts in their dependencies. - http://virtualenvwrapper.readthedocs.org/en/latest/ 
+
+
