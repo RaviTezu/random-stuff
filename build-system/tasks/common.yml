@@ -1,0 +1,53 @@
+---
+- name: apt install Java 1.7 and some basic dependencies. Must be installed before repo.
+  sudo: yes
+  apt: name={{ item }} state=present update_cache=true
+  with_items:
+   - python-pycurl
+   - unzip
+   - openjdk-7-jdk
+
+- name: thoughtworks go apt repository
+  sudo: yes
+  apt_repository: repo='deb http://dl.bintray.com/gocd/gocd-deb/ /' state=present
+  when: ansible_pkg_mgr == 'apt'
+
+- name: add go group
+  sudo: yes
+  group: gid={{ GOCD_GROUPID }} name={{ GOCD_GROUP }} state=present
+
+- name: add go user with home at /var/go
+  sudo: yes
+  user: name={{ GOCD_USER }} comment="Go CD User" uid={{ GOCD_USERID }} group={{ GOCD_GROUP }} home=/var/go
+
+- name: create log directory
+  sudo: yes
+  file: path=/var/log/go-server state=directory owner={{ GOCD_USER }} group={{ GOCD_GROUP }}
+
+- name: create run directory
+  sudo: yes
+  file: path=/var/run/go-server state=directory
+
+- name: create var/lib/go-server directory
+  sudo: yes
+  file: path=/var/lib/go-server state=directory owner={{ GOCD_USER }} group={{ GOCD_GROUP }}
+
+- name: create etc/go directory
+  sudo: yes
+  file: path=/etc/go state=directory owner={{ GOCD_USER }} group={{ GOCD_GROUP }}
+
+- name: determine latest version of Go available in repo
+  shell: "{{ ansible_pkg_mgr }} list go-server |grep go-server |awk '{print $2}'"
+  register: tmp_go_version
+  changed_when: false
+  when: GOCD_GO_VERSION == 'latest'
+
+- name: Set GOCD_GO_VERSION to latest
+  set_fact:
+     GOCD_GO_VERSION: "{{ tmp_go_version.stdout }}"
+  when: GOCD_GO_VERSION == 'latest'
+
+- name: apt install git
+  sudo: yes
+  apt: pkg=git state=present
+  when: ansible_pkg_mgr=='apt' and GOCD_SCM_GIT

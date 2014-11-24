@@ -1,0 +1,5 @@
+---
+# tasks file for build-system
+   - include: common.yml
+   - include: server.yml
+   - include: agent.yml
