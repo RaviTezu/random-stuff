@@ -1,0 +1,12 @@
+---
+# defaults file for build-system
+GO_VERSION: latest
+GO_JAVA_HOME:
+GO_SERVER_HOST:
+GO_SERVER_PORT:
+GO_USER: go
+GO_USERID: 5000
+GO_GROUP: go
+GO_GROUPID: 5000
+GO_AUTO_REGISTER_KEY:
+
